@@ -1,1 +1,17 @@
 # byte-buddy-back-end
+
+## Useful Links
+Spring Data MongoDB
+https://spring.io/projects/spring-data-mongodb#samples
+
+spring-data-book
+https://github.com/spring-attic/spring-data-book/tree/master/mongodb/src/main/java/com/oreilly/springdata/mongodb/order
+
+Spring Data examples
+https://github.com/spring-projects/spring-data-examples/blob/main/README.adoc#spring-data-mongodb
+
+MongoDB with Java
+https://www.mongodb.com/docs/languages/java/
+
+MongoDB Java Driver
+https://www.mongodb.com/docs/drivers/java/sync/current/
