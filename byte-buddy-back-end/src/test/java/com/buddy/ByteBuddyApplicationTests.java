@@ -1,4 +1,4 @@
-package com.examples.demo.demo_project;
+package com.buddy;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
