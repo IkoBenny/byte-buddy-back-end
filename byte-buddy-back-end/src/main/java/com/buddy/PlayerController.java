@@ -19,14 +19,15 @@ public class PlayerController {
 	}
 
 	@GetMapping("/players")
-    public String getByteWithPlayerName(@RequestParam(required = false, name="first") String first,
-            @RequestParam(required = true, name="last") String last) {
-        return playerService.getDocumentsByLastName(last);
+    public String getByteWithPlayerName(@RequestParam(required = true, name="player") String player) {
+        return playerService.getDocumentsByName(player);
     }
 	
 	@GetMapping("/players/date")
-    public List<Document> getByteWithDate(@RequestParam(required = true, name="date") String date) {
-        return playerService.getDocumentsByDate(date);
+    public List<Document> getByteWithDate(@RequestParam(required = true, name="day") int day,
+    		@RequestParam(required = true, name="month") int month,
+    		@RequestParam(required = true, name="year") int year) {
+        return playerService.getDocumentsByDate(day, month, year);
     }
 
 	@PostMapping("/players")
