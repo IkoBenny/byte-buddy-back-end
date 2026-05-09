@@ -13,14 +13,13 @@ public class PlayerService {
 		this.playerRepository = playerRepository;
 	}
 	
-	public String getDocumentsByLastName(String last) {
-		Document doc = playerRepository.getDocumentsByLastName(last);
-		String json = doc.toJson();
-		return json;
+	public List<Document> getDocumentsByName(String player) {
+		List<Document> documents = playerRepository.getDocumentsByName(player);
+		return documents;
 	}
 	
-	public List<Document> getDocumentsByDate(String date) {
-		List<Document> documents = playerRepository.getDocumentsByDate(date);
+	public List<Document> getDocumentsByDate(int day, int month, int year) {
+		List<Document> documents = playerRepository.getDocumentsByDate(day, month, year);
 		return documents;
 	}
 }

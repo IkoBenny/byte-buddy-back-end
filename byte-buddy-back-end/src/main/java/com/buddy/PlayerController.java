@@ -3,13 +3,14 @@ package com.buddy;
 import java.util.List;
 
 import org.bson.Document;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
+@CrossOrigin(origins = "*")
 @RestController
 public class PlayerController {
 	
@@ -19,14 +20,15 @@ public class PlayerController {
 	}
 
 	@GetMapping("/players")
-    public String getByteWithPlayerName(@RequestParam(required = false, name="first") String first,
-            @RequestParam(required = true, name="last") String last) {
-        return playerService.getDocumentsByLastName(last);
+    public List<Document> getByteWithPlayerName(@RequestParam(required = true, name="player") String player) {
+        return playerService.getDocumentsByName(player);
     }
 	
 	@GetMapping("/players/date")
-    public List<Document> getByteWithDate(@RequestParam(required = true, name="date") String date) {
-        return playerService.getDocumentsByDate(date);
+    public List<Document> getByteWithDate(@RequestParam(required = true, name="day") int day,
+    		@RequestParam(required = true, name="month") int month,
+    		@RequestParam(required = true, name="year") int year) {
+        return playerService.getDocumentsByDate(day, month, year);
     }
 
 	@PostMapping("/players")
