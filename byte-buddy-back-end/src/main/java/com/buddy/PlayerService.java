@@ -13,10 +13,9 @@ public class PlayerService {
 		this.playerRepository = playerRepository;
 	}
 	
-	public String getDocumentsByName(String player) {
-		Document doc = playerRepository.getDocumentsByName(player);
-		String json = doc.toJson();
-		return json;
+	public List<Document> getDocumentsByName(String player) {
+		List<Document> documents = playerRepository.getDocumentsByName(player);
+		return documents;
 	}
 	
 	public List<Document> getDocumentsByDate(int day, int month, int year) {

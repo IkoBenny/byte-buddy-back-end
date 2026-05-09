@@ -30,8 +30,9 @@ public class PlayerRepository {
         this.playerCollection = db.getCollection(collectionName);
     }
     
-    public Document getDocumentsByName(String player) {
-       return playerCollection.find(eq("player", player)).first();
+    public List<Document> getDocumentsByName(String player) {
+    	List<Document> documents = new ArrayList<>();
+       return playerCollection.find(eq("player", player)).into(new ArrayList<>());
     }
     
     public List<Document> getDocumentsByDate(int day, int month, int year) {
